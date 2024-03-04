@@ -1,0 +1,330 @@
+Program.Sub.ScreenSU.Start
+gui.Form1..create
+gui.Form1..caption("List Price Adjuster")
+gui.Form1..size(4845,9300)
+gui.Form1..position(0,0)
+gui.Form1..event(unload,form1_unload)
+gui.Form1..alwaysontop(False)
+gui.Form1..fontname("Arial")
+gui.Form1..fontsize(8)
+gui.Form1..forecolor(0)
+gui.Form1..fontstyle(,,,,)
+gui.Form1..BackColor(-2147483633)
+gui.Form1..controlbox(True)
+gui.Form1..maxbutton(True)
+gui.Form1..minbutton(True)
+gui.Form1..mousepointer(0)
+gui.Form1..moveable(True)
+gui.Form1..sizeable(True)
+gui.Form1..ShowInTaskBar(True)
+gui.Form1..titlebar(True)
+gui.Form1.lvwPL.create(listview)
+gui.Form1.lvwPL.view(3)
+gui.Form1.lvwPL.addlistviewcolumn("Product Line",1500,0)
+gui.Form1.lvwPL.visible(True)
+gui.Form1.lvwPL.size(1560,6120)
+gui.Form1.lvwPL.zorder(0)
+gui.Form1.lvwPL.position(200,200)
+gui.Form1.lvwPL.enabled(True)
+gui.Form1.lvwPL.borderstyle(0)
+gui.Form1.lvwPL.fontname("Arial")
+gui.Form1.lvwPL.fontsize(8)
+gui.Form1.lvwSC.create(listview)
+gui.Form1.lvwSC.view(3)
+gui.Form1.lvwSC.addlistviewcolumn("Sort Code",1500,0)
+gui.Form1.lvwSC.visible(True)
+gui.Form1.lvwSC.size(1560,6120)
+gui.Form1.lvwSC.zorder(0)
+gui.Form1.lvwSC.position(2725,200)
+gui.Form1.lvwSC.enabled(True)
+gui.Form1.lvwSC.fontname("Arial")
+gui.Form1.lvwSC.fontsize(8)
+gui.Form1.chkPL.create(checkbox)
+gui.Form1.chkPL.caption("All")
+gui.Form1.chkPL.visible(True)
+gui.Form1.chkPL.size(1485,255)
+gui.Form1.chkPL.zorder(0)
+gui.Form1.chkPL.position(200,6500)
+gui.Form1.chkPL.enabled(True)
+gui.Form1.chkPL.alignment(0)
+gui.Form1.chkPL.fontname("Arial")
+gui.Form1.chkPL.fontsize(8)
+gui.Form1.chkPL.event(click,chkpl_click)
+gui.Form1.chkSC.create(checkbox)
+gui.Form1.chkSC.caption("All")
+gui.Form1.chkSC.visible(True)
+gui.Form1.chkSC.size(1485,255)
+gui.Form1.chkSC.zorder(0)
+gui.Form1.chkSC.position(2725,6500)
+gui.Form1.chkSC.enabled(True)
+gui.Form1.chkSC.alignment(0)
+gui.Form1.chkSC.fontname("Arial")
+gui.Form1.chkSC.fontsize(8)
+gui.Form1.chkSC.event(click,chksc_click)
+gui.Form1.txtpercent.create(textbox)
+gui.Form1.txtpercent.text("")
+gui.Form1.txtpercent.visible(True)
+gui.Form1.txtpercent.size(780,420)
+gui.Form1.txtpercent.zorder(0)
+gui.Form1.txtpercent.position(2130,7120)
+gui.Form1.txtpercent.enabled(True)
+gui.Form1.txtpercent.alignment(0)
+gui.Form1.txtpercent.fontname("Arial")
+gui.Form1.txtpercent.fontsize(8)
+gui.Form1.txtpercent.maxLength(3)
+gui.Form1.txtpercent.BackColor(-2147483643)
+gui.Form1.lbl1.create(label)
+gui.Form1.lbl1.caption("Label")
+gui.Form1.lbl1.backstyle(0)
+gui.Form1.lbl1.visible(True)
+gui.Form1.lbl1.size(1935,255)
+gui.Form1.lbl1.zorder(0)
+gui.Form1.lbl1.position(200,200)
+gui.Form1.lbl1.enabled(True)
+gui.Form1.lbl1.alignment(0)
+gui.Form1.lbl1.fontname("Arial")
+gui.Form1.lbl1.fontsize(8)
+gui.Form1.lbl1.BackColor(-2147483633)
+gui.Form1.lbl2.create(label)
+gui.Form1.lbl2.caption("Label")
+gui.Form1.lbl2.backstyle(0)
+gui.Form1.lbl2.visible(True)
+gui.Form1.lbl2.size(1935,255)
+gui.Form1.lbl2.zorder(0)
+gui.Form1.lbl2.position(200,200)
+gui.Form1.lbl2.enabled(True)
+gui.Form1.lbl2.alignment(0)
+gui.Form1.lbl2.fontname("Arial")
+gui.Form1.lbl2.fontsize(8)
+gui.Form1.lbl2.BackColor(-2147483633)
+gui.Form1.lbl3.create(label)
+gui.Form1.lbl3.caption("Label")
+gui.Form1.lbl3.backstyle(0)
+gui.Form1.lbl3.visible(True)
+gui.Form1.lbl3.size(1935,255)
+gui.Form1.lbl3.zorder(0)
+gui.Form1.lbl3.position(200,200)
+gui.Form1.lbl3.enabled(True)
+gui.Form1.lbl3.alignment(0)
+gui.Form1.lbl3.fontname("Arial")
+gui.Form1.lbl3.fontsize(8)
+gui.Form1.lbl3.BackColor(-2147483633)
+gui.Form1.lbl4.create(label)
+gui.Form1.lbl4.caption("Percent to Increase")
+gui.Form1.lbl4.backstyle(0)
+gui.Form1.lbl4.visible(True)
+gui.Form1.lbl4.size(915,450)
+gui.Form1.lbl4.zorder(0)
+gui.Form1.lbl4.position(1200,7125)
+gui.Form1.lbl4.enabled(True)
+gui.Form1.lbl4.alignment(0)
+gui.Form1.lbl4.fontname("Arial")
+gui.Form1.lbl4.fontsize(8)
+gui.Form1.lbl4.BackColor(-2147483633)
+gui.Form1.cmdexecute.create(button)
+gui.Form1.cmdexecute.caption("Execute")
+gui.Form1.cmdexecute.visible(True)
+gui.Form1.cmdexecute.size(975,450)
+gui.Form1.cmdexecute.zorder(0)
+gui.Form1.cmdexecute.position(1740,8030)
+gui.Form1.cmdexecute.enabled(True)
+gui.Form1.cmdexecute.fontname("Arial")
+gui.Form1.cmdexecute.fontsize(8)
+gui.Form1.cmdexecute.event(click,cmdexecute_click)
+gui.Form1.lvwPL.tabstop(True)
+gui.Form1.lvwPL.tabindex(1)
+gui.Form1.lvwSC.tabstop(True)
+gui.Form1.lvwSC.tabindex(2)
+gui.Form1.txtpercent.tabstop(True)
+gui.Form1.txtpercent.tabindex(3)
+gui.Form1.cmdexecute.tabstop(True)
+gui.Form1.cmdexecute.tabindex(4)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+' Chinook
+' Adjust list price in inventory_mstr
+' custom hook
+' 11/7/08
+
+Variable.Local.iCounter.declare(Long)
+
+Variable.Local.iCounter.Set(0)
+
+Gui.Form1.lvwPL.MultiSelect(true)
+Gui.Form1.lvwSC.MultiSelect(TRUE)
+Gui.form1.lvwPL.Checkboxes(true)
+Gui.form1.lvwsc.Checkboxes(true)
+
+Function.Odbc.Connection!Con.Openconnection(Variable.Ambient.pdsn,Variable.Ambient.PUser,Variable.Ambient.PPass)
+
+Function.ODBC.Connection!Con.OpenRecordsetRO("rst","SELECT DISTINCT PRODUCT_LINE FROM V_INVENTORY_MSTR ORDER BY PRODUCT_LINE")
+
+Function.Intrinsic.Control.DoUntil(Variable.Odbc.Con!rst.EOF,=,True)
+	
+	Gui.Form1.lvwPL.AddListItem(Variable.Local.iCounter.string,Variable.Odbc.Con!rst.FieldVal!PRODUCT_LINE)
+	Function.intrinsic.Math.Add(Variable.Local.iCounter,1,Variable.Local.iCounter)
+
+	Function.ODBC.CON!RST.MoveNext
+
+Function.Intrinsic.Control.Loop
+Function.ODBC.Con!rst.Close
+
+Variable.Local.iCounter.Set(0)
+
+Function.ODBC.Connection!Con.OpenRecordsetRO("rst","SELECT DISTINCT CODE_SORT FROM V_INVENTORY_MSTR ORDER BY CODE_SORT")
+	
+Function.Intrinsic.Control.DoUntil(Variable.Odbc.Con!rst.EOF,=,True)
+
+	Gui.Form1.lvwSC.AddListItem(Variable.Local.iCounter.string,Variable.Odbc.Con!rst.FieldVal!CODE_SORT)
+	Function.intrinsic.Math.Add(Variable.Local.iCounter,1,Variable.Local.iCounter)
+
+	Function.ODBC.CON!RST.MoveNext
+
+Function.Intrinsic.Control.Loop
+Function.ODBC.Con!rst.Close
+
+Gui.Form1.chkPL.Value(0)
+Gui.Form1.chkSC.Value(0)
+
+
+Gui.Form1..Show
+
+Program.Sub.Main.End
+
+program.sub.cmdexecute_click.start
+Variable.Local.sPL.Declare(String)
+Variable.Local.sSC.Declare(String)
+Variable.Local.retVar.Declare(String)
+Variable.Local.retVar2.Declare(String)
+Variable.Local.i.Declare(String)
+Variable.Local.i2.Declare(String)
+Variable.Local.lOrd.Declare(Long)
+Variable.Local.lOrd2.Declare(Long)
+Variable.Local.sSelText.Declare(String)
+Variable.Local.sSelText2.Declare(String)
+Variable.Local.sSQL.Declare(String)
+Variable.Local.fPercent.Declare(Float)
+Variable.Local.fMod.Declare(Float)
+Variable.Local.fNewPrice.Declare(Float)
+Variable.Local.iCount.Declare(Long)
+Variable.Local.sMsgTxt.Declare(String)
+
+Gui.Form1..MousePointer(11)
+Variable.Local.iCount.Set(0)
+
+Gui.Form1.lvwPL.RetrievecheckedListItems(Variable.Local.sPL)
+Function.Intrinsic.String.Split(Variable.Local.sPL,"*!*",Variable.Local.retVar)
+Function.Intrinsic.Control.If(Variable.Local.retVar,=,"***NORETURN***")
+	Function.intrinsic.ui.msgbox("PL must be selected")
+	Function.Intrinsic.Control.exitsub(Cmdexecute_click)
+Function.Intrinsic.Control.endif
+	
+
+Gui.Form1.lvwSC.RetrievecheckedListItems(Variable.Local.sSC)
+Function.Intrinsic.String.Split(Variable.Local.sSC,"*!*",Variable.Local.retVar2)
+Function.Intrinsic.Control.If(Variable.Local.retVar2,=,"***NORETURN***")
+	Function.intrinsic.ui.msgbox("SC must be selected")
+	Function.Intrinsic.Control.exitsub(Cmdexecute_click)
+Function.Intrinsic.Control.endif
+
+
+' Loop through selected PLs
+Function.Intrinsic.Control.For(Variable.Local.i,Variable.Local.retVar.LBound,Variable.Local.retVar.UBound,1)
+	Gui.Form1.lvwPL.ListItemKeyToOrdinal(Variable.Local.retVar(variable.Local.i),Variable.Local.lOrd)
+	Variable.local.sSelText.set(Variable.Screen.Form1!lvwPL.ListItemText(Variable.Local.lOrd))
+' Loop through selected SCs
+	Function.Intrinsic.control.for(Variable.local.i2,Variable.local.retVar2.lbound,Variable.local.retvar2.ubound,1)
+		Gui.Form1.lvwSC.ListItemKeyToOrdinal(Variable.Local.retVar2(variable.Local.i2),Variable.Local.lOrd2)
+		Variable.local.sSelText2.Set(Variable.Screen.Form1!lvwSC.ListItemText(variable.Local.lOrd2))
+		Function.intrinsic.string.concat("select part, amt_price from inventory_mstr where product_line = '",Variable.local.sSelText,"' and code_sort = '",Variable.local.sSelText2,"' and amt_price > 0",Variable.local.sSql)
+		Function.ODBC.connection!Con.OpenRecordsetRW("rst1",Variable.Local.sSQL)
+		Function.Intrinsic.Control.DoUntil(Variable.ODBC.Con!rst1.EOF,=,True)
+			function.Intrinsic.Control.If(Variable.Screen.Form1!txtpercent.Text.float,>,0)
+				function.Intrinsic.Math.div(Variable.Screen.Form1!txtpercent.Text.float,100,Variable.Local.fPercent)
+				Function.Intrinsic.Math.Mult(Variable.ODBC.Con!rst1.FieldVal!amt_price,Variable.local.fPercent,Variable.local.fMod)
+				Function.Intrinsic.Math.Add(Variable.ODBC.Con!rst1.FieldVal!amt_price,Variable.local.fMod,Variable.local.fNewPrice)
+				Function.odbc.con!rst1.set!amt_price(Variable.Local.fNewPrice)
+				Function.ODBC.Con!rst1.Update
+				Function.Intrinsic.Math.Add(Variable.Local.iCount,1,Variable.Local.iCount)
+			Function.Intrinsic.Control.EndIf
+			Function.ODBC.con!rst1.Movenext
+		Function.Intrinsic.Control.Loop
+		Function.ODBC.Con!rst1.Close
+	Function.Intrinsic.Control.Next(Variable.Local.i2)
+Function.Intrinsic.Control.Next(Variable.Local.i)
+Function.intrinsic.string.concat(Variable.local.iCount," inventory parts updated",Variable.Local.sMsgTxt)
+Function.Intrinsic.UI.Msgbox(Variable.Local.sMsgTxt)
+
+Gui.Form1..MousePointer(0)
+
+program.sub.cmdexecute_click.end
+
+program.sub.chkpl_click.start
+Variable.Local.retVar.Declare(String)
+Variable.Local.i.declare(String)
+
+Function.intrinsic.Control.if(Variable.Screen.Form1!chkPL.Value,=,0)
+	Gui.Form1.lvwPL.RetrieveAllListItems(Variable.Local.retVar)
+	Function.Intrinsic.String.Split(Variable.Local.retVar,"*!*",Variable.Local.retVar)
+	Function.Intrinsic.Control.For(Variable.Local.i,Variable.Local.retVar.LBound,Variable.Local.retVar.UBound,1)
+	Gui.form1.lvwPL.SetListItemProps(Variable.Local.i,,False,,,,,,)
+	Function.intrinsic.control.next(Variable.local.i)
+Function.Intrinsic.Control.ElseIf(Variable.Screen.Form1!chkPL.value,=,1)
+	Gui.Form1.lvwPL.RetrieveAllListItems(Variable.Local.retVar)
+	Function.Intrinsic.String.Split(Variable.Local.retVar,"*!*",Variable.Local.retVar)
+	Function.Intrinsic.Control.For(Variable.Local.i,Variable.Local.retVar.LBound,Variable.Local.retVar.UBound,1)
+	Gui.form1.lvwPL.SetListItemProps(Variable.Local.i,,True,,,,,,)
+	Function.intrinsic.control.next(Variable.local.i)
+Function.intrinsic.control.endif
+		
+
+	
+
+
+			
+
+program.sub.chkpl_click.end
+
+program.sub.chksc_click.start
+Variable.Local.retVar.Declare(String)
+Variable.Local.i.declare(String)
+
+Function.intrinsic.Control.if(Variable.Screen.Form1!chkSC.Value,=,0)
+	Gui.Form1.lvwSC.RetrieveAllListItems(Variable.Local.retVar)
+	Function.Intrinsic.String.Split(Variable.Local.retVar,"*!*",Variable.Local.retVar)
+	Function.Intrinsic.Control.For(Variable.Local.i,Variable.Local.retVar.LBound,Variable.Local.retVar.UBound,1)
+	Gui.form1.lvwSC.SetListItemProps(Variable.Local.i,,False,,,,,,)
+	Function.intrinsic.control.next(Variable.local.i)
+Function.Intrinsic.Control.ElseIf(Variable.Screen.Form1!chkSC.value,=,1)
+	Gui.Form1.lvwSC.RetrieveAllListItems(Variable.Local.retVar)
+	Function.Intrinsic.String.Split(Variable.Local.retVar,"*!*",Variable.Local.retVar)
+	Function.Intrinsic.Control.For(Variable.Local.i,Variable.Local.retVar.LBound,Variable.Local.retVar.UBound,1)
+	Gui.form1.lvwSC.SetListItemProps(Variable.Local.i,,True,,,,,,)
+	Function.intrinsic.control.next(Variable.local.i)
+Function.intrinsic.control.endif
+		
+
+
+	
+
+
+			
+
+program.sub.chksc_click.end
+
+program.sub.form1_unload.start
+Function.Intrinsic.Control.End
+
+Function.ODBC.Connection!Con.close
+
+program.sub.form1_unload.end
+
+
